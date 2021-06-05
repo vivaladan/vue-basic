@@ -2,7 +2,7 @@
   <div>
     <div>Hello {{ value }}</div>
     <template v-if="userName">
-      <div>Hi {{ userName }} <a href="/.auth/logout/aad">Logout</a></div>
+      <div>Hi {{ userName }} <a href="/.auth/logout">Logout</a></div>
     </template>
     <template v-else>
       <div>Not logged in <a href="/.auth/login/aad">Login</a></div>
