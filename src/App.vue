@@ -2,10 +2,10 @@
   <div>
     <div>Hello {{ value }}</div>
     <template v-if="userName">
-      <div>Hi {{ userName }} <a href=".auth/logout/aad">Logout</a></div>
+      <div>Hi {{ userName }} <a href="/.auth/logout/aad">Logout</a></div>
     </template>
     <template v-else>
-      <div>Not logged in <a href=".auth/login/aad">Login</a></div>
+      <div>Not logged in <a href="/.auth/login/aad">Login</a></div>
     </template>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     };
   },
   async mounted() {
-    const userResponse = await fetch(".auth/me");
+    const userResponse = await fetch("/.auth/me");
     const {
       clientPrincipal: { userDetails },
     } = await userResponse.json();
