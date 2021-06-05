@@ -7,8 +7,13 @@ export default {
   name: "App",
   data() {
     return {
-      value: "World"
+      value: "World",
     };
-  }
+  },
+  async mounted() {
+    const response = await fetch("api/message");
+    const { text } = await response.json();
+    this.value = text;
+  },
 };
 </script>
