@@ -21,12 +21,10 @@ export default {
   },
   async mounted() {
     const userResponse = await fetch("/.auth/me");
-    const {
-      clientPrincipal: { userDetails },
-    } = await userResponse.json();
-    this.userName = userDetails;
+    const { clientPrincipal } = await userResponse.json();
+    this.userName = clientPrincipal?.userDetails;
 
-    const response = await fetch("api/message");
+    const response = await fetch("/api/message");
     const { text } = await response.json();
     this.value = text;
   },

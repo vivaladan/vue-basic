@@ -6,12 +6,13 @@
 
 ```bash
 npm install
+npm install -g azure-functions-core-tools@3 --unsafe-perm true
 ```
 
 ### Compiles and hot-reloads for development
 
 ```bash
-npm run serve
+swa start http://localhost:8080 --run "npm run serve" --api "http://localhost:7071"
 ```
 
 ### Compiles and minifies for production
